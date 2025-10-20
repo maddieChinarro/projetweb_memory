@@ -4,20 +4,49 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>S'inscrire</title>
-        <link rel="stylesheet" href="/assets/styles/main.css">
+		<link rel="stylesheet" href="assets/styles/main.css" />
 	</head>
 	<body>
 		<h1>ENI - Memory - S'inscrire</h1>
 
 		<nav class="navbar">
-			<a href="/index.html" id="accueil" class="nav link">Accueil</a>
+			<a href="index.html" id="accueil" class="nav link">Accueil</a>
 			<a href="" id="incription" class="nav link active">S'inscrire</a>
-			<a href="/connection.html" id="connection" class="nav link">Se connecter</a>
-			<a href="/profil.html" id="profil" class="nav link">Profil</a>
-			<a href="/memory.html" id="jouer" class="nav link">Jouer</a>
+			<a href="connection.html" id="connection" class="nav link">Se connecter</a>
+			<a href="profil.html" id="profil" class="nav link">Profil</a>
+			<a href="memory.html" id="jouer" class="nav link">Jouer</a>
 		</nav>
 
-		<main></main>
-        <script type="module" src="assets/scripts/main.js"></script>
+		<main>
+			<form action="" method="get" class="form inscription">
+				<h2>Inscrivez-vous</h2>
+				<div>
+					<label for="userName">Nom d'utilisateur</label>
+					<input id="userName" type="text" placeholder="3 caractères minimum" />
+					<hr />
+				</div>
+				<div>
+					<label for="userEmail">Entrez votre email</label>
+					<input id="userEmail" type="text" placeholder="exemple@memory.eni" />
+					<hr />
+				</div>
+				<div>
+					<label for="userPassword">Mot de passe</label>
+					<input id="userPassword" type="text" placeholder="Votre mot de passe" />
+					<hr />
+					<p class="passwordHelp">Au moins un symbole, un chiffre, et 6 caractères minimum.</p>
+				</div>
+				<div>
+					<label for="confirmPassword">Confirmez le mot de passe</label>
+					<input id="confirmPassword" type="text" placeholder="Comfirmez le mot de passe" />
+					<hr />
+				</div>
+				<div>
+					<button id="submit" type="submit">Création du compte</button>
+					<button id="cancel" type="reset">Annuler</button>
+				</div>
+			</form>
+		</main>
+		<script type="module" src="assets/scripts/main.js"></script>
 	</body>
 </html>

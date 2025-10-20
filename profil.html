@@ -4,20 +4,63 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Profil</title>
-        <link rel="stylesheet" href="/assets/styles/main.css">
+		<link rel="stylesheet" href="assets/styles/main.css" />
 	</head>
 	<body>
 		<h1>ENI - Memory - Profil</h1>
 
 		<nav class="navbar">
-			<a href="/index.html" id="accueil" class="nav link active">Accueil</a>
-			<a href="/inscription.html" id="incription" class="nav link">S'inscrire</a>
-			<a href="/connection.html" id="connection" class="nav link">Se connecter</a>
+			<a href="index.html" id="accueil" class="nav link active">Accueil</a>
+			<a href="inscription.html" id="incription" class="nav link">S'inscrire</a>
+			<a href="connection.html" id="connection" class="nav link">Se connecter</a>
 			<a href="" id="profil" class="nav link active">Profil</a>
-			<a href="/memory.html" id="jouer" class="nav link">Jouer</a>
+			<a href="memory.html" id="jouer" class="nav link">Jouer</a>
 		</nav>
 
-		<main></main>
-        <script type="module" src="assets/scripts/main.js"></script>
+		<main class="profile">
+			<h2>Profil</h2>
+			<img src="assets/img/question.svg" alt="Point d'interrogation" />
+			<div>
+				<h3>Nom d'utilisateur</h3>
+				<p id="profileUserName">PlaceholderUsername</p>
+				<hr />
+			</div>
+			<div>
+				<h3>Email</h3>
+				<p id="profileUserEmail">Placeholder@user.email</p>
+				<hr />
+			</div>
+			<div>
+				<h3>Choix du Memory</h3>
+				<select name="memory" id="memoryChoice">
+					<option value="animatedAnimals">Animaux animés</option>
+				</select>
+				<img src="assets/img/animauxAnimes/memory_detail_animaux_animes.png" alt="La grille de Memory avec les animaux animés" />
+			</div>
+			<div>
+				<h3>Taille du Memory</h3>
+				<select name="size" id="memorySize">
+					<option value="4x3">4 * 3</option>
+				</select>
+			</div>
+
+			<button id="saveBtn">Enregistrer</button>
+
+			<table class="scores">
+				<caption>
+    				Derniers meilleurs scores : 
+  				</caption>
+				<thead>
+					<tr>
+						<th scope="col">Pseudo</th>
+						<th scope="col">Score</th>
+						<th scope="col">Taille</th>
+						<th scope="col">Choix Memory</th>
+						<th scope="col">Date</th>
+					</tr>
+				</thead>
+			</table>
+		</main>
+		<script type="module" src="assets/scripts/main.js"></script>
 	</body>
 </html>

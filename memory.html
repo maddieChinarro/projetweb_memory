@@ -4,20 +4,57 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Memory</title>
-        <link rel="stylesheet" href="/assets/styles/main.css">
+		<link rel="stylesheet" href="assets/styles/main.css" />
 	</head>
 	<body>
 		<h1>ENI - Memory</h1>
 
 		<nav class="navbar">
-			<a href="/index.html" id="accueil" class="nav link active">Accueil</a>
-			<a href="/inscription.html" id="incription" class="nav link">S'inscrire</a>
-			<a href="/connection.html" id="connection" class="nav link">Se connecter</a>
-			<a href="/profil.html" id="profil" class="nav link">Profil</a>
+			<a href="index.html" id="accueil" class="nav link active">Accueil</a>
+			<a href="inscription.html" id="incription" class="nav link">S'inscrire</a>
+			<a href="connection.html" id="connection" class="nav link">Se connecter</a>
+			<a href="profil.html" id="profil" class="nav link">Profil</a>
 			<a href="" id="jouer" class="nav link active">Jouer</a>
 		</nav>
 
-		<main></main>
-        <script type="module" src="assets/scripts/main.js"></script>
+		<main>
+			<table class="scores">
+				<caption>
+					Derniers meilleurs scores :
+				</caption>
+				<thead>
+					<tr>
+						<th scope="col">Pseudo</th>
+						<th scope="col">Score</th>
+						<th scope="col">Taille</th>
+						<th scope="col">Choix Memory</th>
+						<th scope="col">Date</th>
+					</tr>
+				</thead>
+			</table>
+
+			<p>
+				Tentez de finir avec le moins d'essais possible !<br />
+				Appuyez sur la <strong>barre espace</strong> pour réessayer.
+			</p>
+
+			<p>Nombre de coups : <span id="currentScore"></span></p>
+
+			<div class="memoryGrid">
+				<img id="memory1" src="assets/img/animauxAnimes/1.webp" alt="">
+				<img id="memory2" src="assets/img/animauxAnimes/1.webp" alt="">
+				<img id="memory3" src="assets/img/animauxAnimes/2.webp" alt="">
+				<img id="memory4" src="assets/img/animauxAnimes/2.webp" alt="">
+				<img id="memory5" src="assets/img/animauxAnimes/3.webp" alt="">
+				<img id="memory6" src="assets/img/animauxAnimes/3.webp" alt="">
+				<img id="memory7" src="assets/img/animauxAnimes/4.webp" alt="">
+				<img id="memory8" src="assets/img/animauxAnimes/4.webp" alt="">
+				<img id="memory9" src="assets/img/animauxAnimes/5.webp" alt="">
+				<img id="memory10" src="assets/img/animauxAnimes/5.webp" alt="">
+				<img id="memory11" src="assets/img/animauxAnimes/6.webp" alt="">
+				<img id="memory12" src="assets/img/animauxAnimes/6.webp" alt="">
+			</div>
+		</main>
+		<script type="module" src="assets/scripts/main.js"></script>
 	</body>
 </html>

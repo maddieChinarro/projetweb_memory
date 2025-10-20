@@ -4,20 +4,38 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Se connecter</title>
-        <link rel="stylesheet" href="/assets/styles/main.css">
+		<link rel="stylesheet" href="assets/styles/main.css" />
 	</head>
 	<body>
 		<h1>ENI - Memory - Se connecter</h1>
 
 		<nav class="navbar">
-			<a href="/index.html" id="accueil" class="nav link active">Accueil</a>
-			<a href="/inscription.html" id="incription" class="nav link">S'inscrire</a>
+			<a href="index.html" id="accueil" class="nav link active">Accueil</a>
+			<a href="inscription.html" id="incription" class="nav link">S'inscrire</a>
 			<a href="" id="connection" class="nav link active">Se connecter</a>
-			<a href="/profil.html" id="profil" class="nav link">Profil</a>
-			<a href="/memory.html" id="jouer" class="nav link">Jouer</a>
+			<a href="profil.html" id="profil" class="nav link">Profil</a>
+			<a href="memory.html" id="jouer" class="nav link">Jouer</a>
 		</nav>
 
-		<main></main>
-        <script type="module" src="assets/scripts/main.js"></script>
+		<main>
+			<form action="" method="get" class="form connection">
+				<h2>Connectez-vous</h2>
+				<div>
+					<label for="userEmail">Entrez votre email</label>
+					<input id="userEmail" type="text" placeholder="exemple@memory.eni" />
+					<hr />
+				</div>
+				<div>
+					<label for="userPassword">Mot de passe</label>
+					<input id="userPassword" type="text" placeholder="Votre mot de passe" />
+					<hr />
+				</div>
+				<div>
+					<button id="submit" type="submit">Se connecter</button>
+					<button id="cancel" type="reset">Annuler</button>
+				</div>
+			</form>
+		</main>
+		<script type="module" src="assets/scripts/main.js"></script>
 	</body>
 </html>

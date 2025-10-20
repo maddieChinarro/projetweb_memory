@@ -1,0 +1,22 @@
+@import url(main.css);
+
+img {
+    width: 40rem;
+}
+
+main {
+    text-align: center;
+    display: flex;
+    flex-flow: column wrap;
+    gap: 1rem;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border: solid;
+    border-radius: 1rem;
+    border-color: rgba(255, 255, 255, 0);
+    background-color: rgb(255, 255, 255);
+} main > * {padding: 0;}
+
+ul {
+    list-style: none;
+}

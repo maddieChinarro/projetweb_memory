@@ -1,0 +1,64 @@
+@import url(main.css);
+@import url(scores.css);
+
+main {
+    gap: 5rem;
+    padding: 2rem 5rem;
+}
+
+.caption {
+    display: flex;
+    flex-flow: column wrap;
+    gap: 2rem;
+}
+
+.memoryGrid {
+    display: grid;
+    grid-template: repeat(3, 1fr)/repeat(4, 1fr);
+    gap: 1rem;
+}
+
+
+.card {
+  width: 10rem;
+  height: 10rem;
+  perspective: 1000px;
+}
+
+.content {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  border-radius: 20px;
+}
+
+/* convert to js */
+/* .card:hover .content {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.3s;
+} */
+
+.front,
+.back {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background: white;
+  backface-visibility: hidden;
+  border-radius: 20px;
+  border: solid;
+  border-color: rgba(94, 177, 255, 0.381);
+  display: flex;
+  justify-content: center;
+}
+
+.back {
+  transform: rotateY( 180deg );
+}
+
+.memoryGrid img {
+    width: 90%;
+}

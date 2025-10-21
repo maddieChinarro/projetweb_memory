@@ -32,5 +32,21 @@ export function memory () {
         });
     });
 
-    let getSrc = (card) => card.querySelector('.back > img').getAttribute("src");
-}
+    let getSrc = (card) => card.querySelector('.back > img').getAttribute("src"); 
+
+    // Reset memory on Escape
+    globalThis.addEventListener("keydown", (event) => {
+    if (event.key == " " || event.key == "Escape") {
+       // shuffle(); // Reset card position
+       document.querySelectorAll(".content").forEach((card) => {
+            card.classList.remove("clicked");
+            card.style = "pointer-events: auto";
+       });
+       cardCpt = 0;
+       victoryCpt = 0;
+       score = 0;
+       document.getElementById("currentScore").textContent = `${score}`; // Update the score display
+    }
+    event.preventDefault(); // Stops the default function of escape key
+    });
+};

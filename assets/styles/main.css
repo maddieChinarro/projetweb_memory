@@ -61,6 +61,17 @@ main {
     background-color: rgb(255, 255, 255);
 } main > * {padding: 0;}
 
+button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-color: rgba(218, 255, 255, 0.338);
+    border-width: 1px;
+    color: rgb(255, 255, 255);
+    text-shadow: black 1px 1px 3px;
+    font-size: 1rem;
+    background: linear-gradient(90deg, rgba(163, 255, 246, 0.77) 0%, rgba(188, 242, 255, 0.712) 54%, rgba(115, 210, 250, 0.8) 100%);
+}
+
 
 @media screen and (max-width: 768px){ 
     main {

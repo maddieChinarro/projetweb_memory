@@ -1,0 +1,11 @@
+.scores {
+    table-layout: auto;
+    width: 35rem;
+    padding: 1rem;
+    border-spacing: 0px;
+}
+
+th, td {
+    border: solid;
+    border-width: 2px;
+}

@@ -35,12 +35,6 @@ main {
   border-radius: 20px;
 }
 
-/* convert to js */
-/* .card:hover .content {
-  transform: rotateY( 180deg ) ;
-  transition: transform 0.3s;
-} */
-
 .front,
 .back {
   position: absolute;
@@ -53,12 +47,19 @@ main {
   border-color: rgba(94, 177, 255, 0.381);
   display: flex;
   justify-content: center;
+  cursor: pointer;
 }
 
 .back {
   transform: rotateY( 180deg );
+  cursor: initial;
 }
 
 .memoryGrid img {
     width: 90%;
+}
+
+.clicked {
+  transform: rotateY( 180deg ) ;
+  transition: transform 0.3s;
 }

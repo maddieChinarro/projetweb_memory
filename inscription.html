@@ -24,23 +24,23 @@
 				<h2>Inscrivez-vous</h2>
 				<div>
 					<label for="userName">Nom d'utilisateur</label>
-					<input id="userName" type="text" placeholder="3 caractères minimum" />
+					<input id="userName" type="text" placeholder="3 caractères minimum" required pattern="[a-zA-Z]{3,}" />
 					<hr />
 				</div>
 				<div>
 					<label for="userEmail">Entrez votre email</label>
-					<input id="userEmail" type="text" placeholder="exemple@memory.eni" />
+					<input id="userEmail" type="email" placeholder="exemple@memory.eni" required />
 					<hr />
 				</div>
 				<div>
 					<label for="userPassword">Mot de passe</label>
-					<input id="userPassword" type="text" placeholder="Votre mot de passe" />
+					<input id="userPassword" type="password" placeholder="Votre mot de passe" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\\d\s:])([^\s]){6,32}$" />
 					<hr />
 					<p class="passwordHelp">Au moins un symbole, un chiffre, et 6 caractères minimum.</p>
 				</div>
 				<div>
 					<label for="confirmPassword">Confirmez le mot de passe</label>
-					<input id="confirmPassword" type="text" placeholder="Comfirmez le mot de passe" />
+					<input id="confirmPassword" type="password" placeholder="Comfirmez le mot de passe" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){6,32}$" />
 					<hr />
 				</div>
 				<div class="formButtons">

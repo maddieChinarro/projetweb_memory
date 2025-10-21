@@ -1,0 +1,46 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form div {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    gap: 0.8rem;
+    width: 30vw;
+}
+
+.form input {
+    border: none;
+    padding: 0.5rem;
+}
+
+.form hr {
+    width: inherit;
+    border-color: rgba(204, 204, 204, 0.39);
+}
+
+.form .passwordHelp {
+    font-size: 0.8rem;
+    color: rgb(173, 173, 173);
+}
+
+.form .formButtons {
+    align-self: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.formButtons button {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border-color: rgba(218, 255, 255, 0.338);
+    border-width: 1px;
+    color: rgb(255, 255, 255);
+    text-shadow: black 1px 1px 3px;
+    font-size: 1rem;
+    background: linear-gradient(90deg, rgba(163, 255, 246, 0.77) 0%, rgba(188, 242, 255, 0.712) 54%, rgba(115, 210, 250, 0.8) 100%);
+}

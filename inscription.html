@@ -22,26 +22,40 @@
 		<main>
 			<form action="" method="get" class="form inscription">
 				<h2>Inscrivez-vous</h2>
-				<div>
+				<div class="formDiv">
 					<label for="userName">Nom d'utilisateur</label>
-					<input id="userName" type="text" placeholder="3 caractères minimum" required pattern="[a-zA-Z]{3,}" />
+					<input id="userName" type="text" placeholder="3 caractères minimum" required/>
 					<hr />
+					<p id="nameCheck" class="formVerify">Veuillez rentrer un nom de 3 caractères minimum.</p>
 				</div>
-				<div>
+				<div class="formDiv">
 					<label for="userEmail">Entrez votre email</label>
 					<input id="userEmail" type="email" placeholder="exemple@memory.eni" required />
 					<hr />
+					<p id="mailCheck" class="formVerify">Veuillez entrer une adresse email valide.</p>
 				</div>
-				<div>
+				<div class="formDiv">
 					<label for="userPassword">Mot de passe</label>
-					<input id="userPassword" type="password" placeholder="Votre mot de passe" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){6,32}$" />
+					<input id="userPassword" type="password" placeholder="Votre mot de passe" required />
 					<hr />
-					<p class="passwordHelp">Au moins un symbole, un chiffre, et 6 caractères minimum.</p>
+					<p id="passCheck" class="passwordHelp">Au moins un symbole, un chiffre, et 6 caractères minimum.</p>
+					<div class="passBar">
+						<div id="weak" class="weakDiv">
+							<p>faible</p>
+						</div>
+						<div id="mid" class="midDiv">
+							<p>moyen</p>
+						</div>
+						<div id="strong" class="strongDiv">
+							<p>fort</p>
+						</div>
+					</div>
 				</div>
-				<div>
+				<div class="formDiv">
 					<label for="confirmPassword">Confirmez le mot de passe</label>
-					<input id="confirmPassword" type="password" placeholder="Comfirmez le mot de passe" required pattern="^(?=.*\d)(?=.*[A-Z])(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){6,32}$" />
+					<input id="confirmPassword" type="password" placeholder="Comfirmez le mot de passe" required/>
 					<hr />
+					<p id="passConfirm" class="formVerify">Les mots de passes doivent correspondre.</p>
 				</div>
 				<div class="formButtons">
 					<button id="submit" type="submit">Création du compte</button>
@@ -49,6 +63,6 @@
 				</div>
 			</form>
 		</main>
-		<script type="module" src="assets/scripts/main.js"></script>
+		<script type="module" src="assets/scripts/form.js"></script>
 	</body>
 </html>

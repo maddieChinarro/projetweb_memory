@@ -4,11 +4,11 @@
     gap: 2rem;
 }
 
-.form div {
+.formDiv {
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
-    gap: 0.8rem;
+    gap: 0.3rem;
     width: 30vw;
 }
 
@@ -22,14 +22,50 @@
     border-color: rgba(204, 204, 204, 0.39);
 }
 
-.form .passwordHelp {
+.passwordHelp, .formVerify {
     font-size: 0.8rem;
+}
+
+.passwordHelp {
     color: rgb(173, 173, 173);
 }
 
-.form .formButtons {
-    align-self: center;
+.formVerify {
+    color: rgb(226, 33, 33);
+    visibility: hidden;
+}
+
+.formButtons {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+}
+
+.passBar {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+.weakDiv, .midDiv, .strongDiv {
+    text-align: center;
+    border-top: solid;
+    width: 30%;
+    font-size: 0.9rem;
+    color: rgb(173, 173, 173);
+    font-weight: bold;
+    visibility: hidden;
+}
+
+.weakDiv {
+    border-color: rgb(255, 112, 41);
+}
+
+.midDiv {
+    border-color: rgb(255, 230, 0);
+}
+
+.strongDiv {
+    border-color: rgb(45, 204, 45);
 }

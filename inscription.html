@@ -24,19 +24,19 @@
 				<h2>Inscrivez-vous</h2>
 				<div class="formDiv">
 					<label for="userName">Nom d'utilisateur</label>
-					<input id="userName" type="text" placeholder="3 caractères minimum" required pattern= "^[a-zA-Z0-9_\-]{3,}$" />
+					<input id="userName" name="username" type="text" placeholder="3 caractères minimum" required pattern= "^[a-zA-Z0-9_\-]{3,}$" />
 					<hr />
 					<p id="nameCheck" class="formVerify">Veuillez rentrer un nom de 3 caractères minimum.</p>
 				</div>
 				<div class="formDiv">
 					<label for="userEmail">Entrez votre email</label>
-					<input id="userEmail" type="email" placeholder="exemple@memory.eni" required pattern="^[A-Za-z0-9._\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,4}$" />
+					<input id="userEmail" name="email" type="email" placeholder="exemple@memory.eni" required pattern="^[A-Za-z0-9._\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,4}$" />
 					<hr />
 					<p id="mailCheck" class="formVerify">Veuillez entrer une adresse email valide.</p>
 				</div>
 				<div class="formDiv">
 					<label for="userPassword">Mot de passe</label>
-					<input id="userPassword" type="password" placeholder="Votre mot de passe" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){6,32}$"/>
+					<input id="userPassword" name="password" type="password" placeholder="Votre mot de passe" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[^\w\d\s:])([^\s]){6,32}$"/>
 					<hr />
 					<p id="passCheck" class="passwordHelp">Au moins un symbole, un chiffre, et 6 caractères minimum.</p>
 					<div class="passBar">

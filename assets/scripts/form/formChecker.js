@@ -1,4 +1,5 @@
 import { hidden, verifyPassword } from "./formShortcuts.js";
+import { recordUser } from "../userStorage/recordUser.js";
 
 const reset = document.getElementById("cancel");
 // Reset form error messages on cancel form
@@ -12,14 +13,15 @@ export function resetForm() {
 }
 
 const form = document.getElementById("formID");
+
 // Checks if the form is valid html-patern-wise and if the passwords match
 export function verifyForm() {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         if (verifyPassword() && form.reportValidity()) {
-            form.submit();
+            recordUser(form);
         } else {
-            console.log(verifyPassword());
+            alert("Veuillez vérifier vos entrées.")
         }
     });
 }

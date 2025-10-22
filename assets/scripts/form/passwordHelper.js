@@ -1,4 +1,4 @@
-import { visible, hidden, testRegex } from "./formChecker.js";
+import { visible, hidden, testRegex } from "./formShortcuts.js";
 
 export function passwordHelper() {
     let strSymbol, strNbr, strLgth;
@@ -33,4 +33,3 @@ export function passwordHelper() {
         }
     });
 }
-

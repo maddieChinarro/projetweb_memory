@@ -69,3 +69,11 @@
 .strongDiv {
     border-color: rgb(45, 204, 45);
 }
+
+.redirect {
+    color: rgb(54, 130, 143);
+    text-shadow: rgba(0, 0, 0, 0.071) 1px 1px 3px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    margin-top: 0.5rem;
+}

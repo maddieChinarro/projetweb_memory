@@ -21,7 +21,7 @@
 		</header>
 
 		<main>
-			<form id="connectID" action="" method="get" class="form connection">
+			<form id="formLogin" class="form connection">
 				<h2>Connectez-vous</h2>
 				<div class="formDiv">
 					<label for="userEmail">Entrez votre email</label>
@@ -32,6 +32,7 @@
 					<label for="userPassword">Mot de passe</label>
 					<input id="userPassword" type="password" placeholder="Votre mot de passe" />
 					<hr />
+					<a class="redirect" href="./inscription.html">Créer un compte</a>
 				</div>
 				<div class="formButtons">
 					<button id="submitForm" type="submit">Se connecter</button>
@@ -39,6 +40,6 @@
 				</div>
 			</form>
 		</main>
-		<script type="module" src="assets/scripts/form/connect.js"></script>
+		<script type="module" src="assets/scripts/userStorage/login.js"></script>
 	</body>
 </html>

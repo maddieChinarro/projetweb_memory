@@ -1,3 +1,4 @@
+// Checks if we can use local or session storage based on browser settings
 export function storageAvailable(type) {
   let storage;
   try {

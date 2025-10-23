@@ -2,31 +2,32 @@ import { storageAvailable } from "./storageChecker.js";
 
 
 export function recordUser(form) {
-    const user = new Map(new FormData(form));
-    let userTable = [];
+    const formData = new FormData(form);
+    const user = Object.fromEntries(formData.entries());
+    let userArray = [];
     let checkSimilarUser = 0;
 
     if (storageAvailable("localStorage")) {
-        if (localStorage.getItem("userTable")) {
-            const userParsed = JSON.parse(localStorage.getItem("userTable")); // Parse the user array stored
-            userTable = userParsed.map(item => new Map(Object.entries(item))); // Turns back the stored array into a map
+        if (localStorage.getItem("userArray")) {
 
-            for (const map of userTable) {
-                if (map.get("username") == user.get("username") || map.get("email") == user.get("email")) {
-                    checkSimilarUser++;
+            userArray = JSON.parse(localStorage.getItem("userArray")); // Parse the user array stored
+
+            for (const u of userArray) { // Check if email or name is taken
+                if (u.username == user.username || u.email == user.email) {
+                    checkSimilarUser = 1;
                     alert("Ce nom d'utilisateur ou cet adresse-email est déjà lié à un compte.");
+                    break;
                 }
             }
             if (checkSimilarUser === 0) {
-                userTable.push(user); // Add the new user map
-                const objetTable = userTable.map(item => Object.fromEntries(item)); // Turns the map back into an array
-                localStorage.setItem("userTable", JSON.stringify(objetTable)); // Store the result
-                success(form);
+                userArray.push(user); // Add the new user to the array
+                localStorage.setItem("userArray", JSON.stringify(userArray)); // Store the result
+                success(form); // Tell the user
             }
+            
         } else { // If there isnt any user stored
-            userTable.push(user); // Add the new user map
-            const objetTable = userTable.map(item => Object.fromEntries(item)); // Turns the map into an array
-            localStorage.setItem("userTable", JSON.stringify(objetTable)); // Store the result
+            userArray.push(user);
+            localStorage.setItem("userArray", JSON.stringify(userArray));
             success(form);
         }
     }

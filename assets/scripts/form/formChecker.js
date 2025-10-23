@@ -19,7 +19,7 @@ export function verifyForm() {
     form.addEventListener("submit", (event) => {
         event.preventDefault();
         if (verifyPassword() && form.reportValidity()) {
-            recordUser(form);
+            recordUser(form); // Records the user in local storage
         } else {
             alert("Veuillez vérifier vos entrées.")
         }

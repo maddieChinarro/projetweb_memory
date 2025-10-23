@@ -1,14 +1,5 @@
-export function shuffle(min, max, gridSize) {
-    let cardImages = document.querySelectorAll(".back > img");
-    let randArray = getRandomArray(min, max, gridSize);
-    let i = 0; // Used to navigate the random array
-    cardImages.forEach((card) => { // Attributes an image based on the random array
-        card.setAttribute("src", `assets/img/animauxAnimes/${randArray[i]}.webp`)
-        i++;
-    });
-}
-
-function getRandomArray(min, max, gridSize) {
+// Gives a random array between min and max to fit the grid
+export function getRandomArray(min, max, gridSize) {
     const randArray = [];
     while (randArray.length < gridSize) { // Fill an array of the grid size with pairs of random numbers
         let rand = getRandomInt(min, max);

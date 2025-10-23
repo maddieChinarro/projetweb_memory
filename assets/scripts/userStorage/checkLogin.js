@@ -3,10 +3,12 @@ import { storageAvailable } from "./storageChecker.js";
 export function checkLogin() {
     if (storageAvailable("sessionStorage")) {
         if (sessionStorage.getItem("user")) {
-            const disconnect = confirm("Vous êtes déjà connecté. Souhaitez-vous vous déconnecter ?");
-            if (disconnect) { // If the user wants to disconnect
-                sessionStorage.clear("user");
-            }
+            setTimeout(() => {
+                const disconnect = confirm("Vous êtes déjà connecté. Souhaitez-vous vous déconnecter ?");
+                if (disconnect) { // If the user wants to disconnect
+                    sessionStorage.clear("user");
+                }
+            }, 200);
         }
     }
 }

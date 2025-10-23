@@ -11,7 +11,6 @@
 			<h1>ENI - Memory - Profil</h1>
 			<nav class="navbar">
 				<a href="index.html" id="accueil" class="nav link active">Accueil</a>
-				<a href="inscription.html" id="incription" class="nav link">S'inscrire</a>
 				<a href="connection.html" id="connection" class="nav link">Se connecter</a>
 				<a href="" id="profil" class="nav link active">Profil</a>
 				<a href="memory.html" id="jouer" class="nav link">Jouer</a>
@@ -30,7 +29,7 @@
 				</div>
 				<div>
 					<h3>Email</h3>
-					<p id="profileUserEmail">Placeholder@user.email</p>
+					<p id="profileEmail">Placeholder@user.email</p>
 				</div>
 			</div>
 			<section class="memorySettings">
@@ -38,18 +37,19 @@
 					<div>
 						<h3>Choix du Memory</h3>
 						<select name="memory" id="memorySelect">
-							<option value="animatedAnimals">Animaux animés</option>
+							<option value="animauxAnimes">Animaux animés</option>
+							<option value="chiens">Chiens</option>
 						</select>
 					</div>
 					<div>
 						<h3>Taille du Memory</h3>
 						<select name="size" id="memorySize">
-							<option value="4x3">4 * 3</option>
+							<option value="4 * 3">4 * 3</option>
 						</select>
 					</div>
 				</div>
 
-				<img class="memoryImg" src="assets/img/animauxAnimes/memory_detail_animaux_animes.png" alt="La grille de Memory avec les animaux animés" />
+				<img id="memoryImg" class="memoryImg" src="assets/img/animauxAnimes/memory_detail_animaux_animes.png" alt="La grille de Memory avec les animaux animés" />
 
 				<button id="saveBtn">Enregistrer</button>
 			</section>
@@ -69,6 +69,6 @@
 				</thead>
 			</table>
 		</main>
-		<script type="module" src="assets/scripts/main.js"></script>
+		<script type="module" src="assets/scripts/profile/profile.js"></script>
 	</body>
 </html>

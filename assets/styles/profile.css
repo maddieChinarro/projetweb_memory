@@ -3,7 +3,7 @@
 
 main {
     width: 45rem;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .pfp {
@@ -19,6 +19,7 @@ main {
     flex-direction: row;
     width: 100%;
     justify-content: space-evenly;
+    margin-bottom: 1rem;
 }
 
 .userData div {
@@ -27,12 +28,15 @@ main {
     gap: 1rem;
 }
 
+.userData p {
+    font-size: 1rem;
+}
+
 .memorySettings {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-    justify-content: space-evenly;
     gap: 2rem;
 }
 

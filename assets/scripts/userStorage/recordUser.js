@@ -19,13 +19,18 @@ export function recordUser(form) {
                     break;
                 }
             }
+
             if (checkSimilarUser === 0) {
+                user.memory = "animauxAnimes"; // Set the user's settings to default
+                user.grid = "4 * 3";
                 userArray.push(user); // Add the new user to the array
                 localStorage.setItem("userArray", JSON.stringify(userArray)); // Store the result
                 success(form); // Tell the user
             }
             
         } else { // If there isnt any user stored
+            user.memory = "animauxAnimes"; // Set the user's settings to default
+            user.grid = "4 * 3";
             userArray.push(user);
             localStorage.setItem("userArray", JSON.stringify(userArray));
             success(form);

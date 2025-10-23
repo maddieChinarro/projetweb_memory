@@ -1,4 +1,4 @@
-import { shuffle } from "./shuffle.js";
+import { setup } from "./setupGrid.js";
 
 export function memory () {
     let cards = document.querySelectorAll(".content");
@@ -56,7 +56,7 @@ export function memory () {
        score = 0;
        document.getElementById("currentScore").textContent = `${score}`; // Update the score display
        setTimeout(() => {
-        shuffle(1, 8, 12); // Reset card position
+        setup(); // Reset card position
        }, 500);
     }
     event.preventDefault(); // Stops the default function of escape key

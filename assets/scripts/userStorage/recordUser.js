@@ -1,22 +1,34 @@
 import { storageAvailable } from "./storageChecker.js";
 
-
 export function recordUser(form) {
     const formData = new FormData(form);
     const user = Object.fromEntries(formData.entries());
-    let userArray = [];
     let checkSimilarUser = 0;
+    let userArray = [];
 
     if (storageAvailable("localStorage")) {
         if (localStorage.getItem("userArray")) {
 
-            userArray = JSON.parse(localStorage.getItem("userArray")); // Parse the user array stored
+            userArray = [JSON.parse(localStorage.getItem("userArray"))]; // Parse the user array stored
 
-            for (const u of userArray) { // Check if email or name is taken
-                if (u.username == user.username || u.email == user.email) {
-                    checkSimilarUser = 1;
-                    alert("Ce nom d'utilisateur ou cet adresse-email est déjà lié à un compte.");
-                    break;
+            try {
+                for (const array of userArray) {
+                    for (const u of array) { // Check if email or name is taken
+                        if (u.username == user.username || u.email == user.email) {
+                            checkSimilarUser = 1;
+                            alert("Ce nom d'utilisateur ou cet adresse-email est déjà lié à un compte.");
+                            break;
+                        }
+                    }
+                }
+            } catch (error) { // If the localStorage sends back an item instead of an array
+                console.error("Can't iterate")
+                for (const u of userArray) { // Check if email or name is taken
+                    if (u.username == user.username || u.email == user.email) {
+                        checkSimilarUser = 1;
+                        alert("Ce nom d'utilisateur ou cet adresse-email est déjà lié à un compte.");
+                        break;
+                    }
                 }
             }
 

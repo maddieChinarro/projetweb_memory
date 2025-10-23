@@ -1,6 +1,6 @@
 import { setupCards } from "./setupCards.js";
 
-export function memory () {
+export function memory (gridSize) {
     let cards = document.querySelectorAll(".content");
     let storedCard;
     let cardCpt = 0;
@@ -25,7 +25,7 @@ export function memory () {
                     } else {
                         victoryCpt++;
                         isTimeOutDone = true;
-                        if (victoryCpt == 6) {
+                        if (victoryCpt == (gridSize/2)) {
                             setTimeout(() => {
                                 alert(`Bravo ! Vous avez finis en ${score} coups !`);
                             }, 200);
@@ -56,9 +56,9 @@ export function memory () {
        score = 0;
        document.getElementById("currentScore").textContent = `${score}`; // Update the score display
        setTimeout(() => {
-        setupCards(); // Reset card position
+        setupCards(gridSize); // Reset card position
        }, 500);
     }
     event.preventDefault(); // Stops the default function of escape key
     });
-};
+}

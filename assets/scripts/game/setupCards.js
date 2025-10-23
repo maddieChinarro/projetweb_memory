@@ -3,18 +3,19 @@ import { getRandomArray } from "./shuffle.js";
 
 
 // Attributes the right memory images based on user's settings
-export function setupCards() {
+export function setupCards(gridSize) {
     const nbrChiens = 23;
     const nbrAnimauxAnimes = 8;
-    const gridSize = 12;
     const min = 1;
     let randArray;
     let cardImages = document.querySelectorAll(".back > img");
+    
     let i = 0; // Used to navigate the random array
-    const user = JSON.parse(sessionStorage.getItem("user")); // Parse the user stored
-
-    if (storageAvailable("sessionStorage")) {
+    
+    if (storageAvailable("sessionStorage")) { // Check if we can use sessionStorage and is it isnt empty
         if (sessionStorage.getItem("user")) {
+            const user = JSON.parse(sessionStorage.getItem("user")); // Parse the user stored       
+            
             switch (user.memory) { // Set the number of possible cards based on memory choice
                 case "animauxAnimes":
                     randArray = getRandomArray(min, nbrAnimauxAnimes, gridSize);
@@ -30,18 +31,15 @@ export function setupCards() {
                 card.setAttribute("src", `assets/img/${user.memory}/${randArray[i]}.webp`)
                 i++;
             };
-        } else { // Set to default is nothing stored
-            setImageDefault(randArray);
+            return 0;
         }
-    } else { // Set to default is nothing stored 
-        setImageDefault(randArray); 
     }
-}
-
-function setImageDefault(randArray) {
-    randArray = getRandomArray(min, nbrAnimauxAnimes, gridSize);
-    for (const card of cardImages) {
-        card.setAttribute("src", `assets/img/animauxAnimes/${randArray[i]}.webp`)
+    const defaultArray = getRandomArray(min, nbrAnimauxAnimes, 12);
+    i = 0; // Set cpt back to start
+    for (const card of cardImages) { // Set images to default in case of empty storage
+        card.setAttribute("src", `assets/img/animauxAnimes/${defaultArray[i]}.webp`)
+        console.log(defaultArray[i]);
+        
         i++;
     };
 }

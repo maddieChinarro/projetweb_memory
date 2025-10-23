@@ -8,10 +8,8 @@ const grid = document.getElementById("memorySize");
 
 if (storageAvailable("sessionStorage") && storageAvailable("localStorage")) {
     if (sessionStorage.getItem("user")) { // If a user is logged-in
-        const user = JSON.parse(sessionStorage.getItem("user")); // Parse the user stored
-        console.log(user);
+        const user = JSON.parse(sessionStorage.getItem("user")); // Parse the user stored 
         
-
         displayProfile(user, memory, grid);
         setSettings(user, memory, grid);
 

@@ -5,14 +5,18 @@ export function setSettings(user, memory, grid) {
     let userObject = JSON.parse(localStorage.getItem("userArray"))[userID]; // Get the userArray
 
     btn.addEventListener("click", () => {
-        user.memory = memory.value; // Assign the new values
-        user.grid = grid.value;
+        if (memory.value == "animauxAnimes" && grid.value != "4 * 3") {
+            alert("Erreur, ce memory n'est pas utilisable avec cette taille !");
+        } else {
+            user.memory = memory.value; // Assign the new values
+            user.grid = grid.value;
 
-        sessionStorage.setItem("user", JSON.stringify(user)); // Store the new values in logged user
+            sessionStorage.setItem("user", JSON.stringify(user)); // Store the new values in logged user
 
-        userObject = user; // Also store in local storage
-        localStorage.setItem("userArray", JSON.stringify(userObject));
-        
-        alert("Vos choix ont étés enregistrés."); // Let the user know
+            userObject = user; // Also store in local storage
+            localStorage.setItem("userArray", JSON.stringify(userObject));
+            
+            alert("Vos choix ont étés enregistrés."); // Let the user know
+        }
     })
 }

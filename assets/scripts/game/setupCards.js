@@ -12,7 +12,7 @@ export function setupCards() {
     let cardImages = document.querySelectorAll(".back > img");
     let i = 0; // Used to navigate the random array
     const user = JSON.parse(sessionStorage.getItem("user")); // Parse the user stored
-    
+
     if (storageAvailable("sessionStorage")) {
         if (sessionStorage.getItem("user")) {
             switch (user.memory) { // Set the number of possible cards based on memory choice
@@ -31,14 +31,14 @@ export function setupCards() {
                 i++;
             };
         } else { // Set to default is nothing stored
-            setImageDefault();
+            setImageDefault(randArray);
         }
     } else { // Set to default is nothing stored 
-        setImageDefault(); 
+        setImageDefault(randArray); 
     }
 }
 
-function setImageDefault() {
+function setImageDefault(randArray) {
     randArray = getRandomArray(min, nbrAnimauxAnimes, gridSize);
     for (const card of cardImages) {
         card.setAttribute("src", `assets/img/animauxAnimes/${randArray[i]}.webp`)

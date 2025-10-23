@@ -1,6 +1,6 @@
 import { memory } from "./memory.js";
-import { setup } from "./setupGrid.js";
+import { setupCards } from "./setupCards.js";
 
-setup();
+setupCards();
 memory();
 

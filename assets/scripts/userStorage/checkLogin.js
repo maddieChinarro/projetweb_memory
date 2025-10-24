@@ -1,14 +1,13 @@
 import { storageAvailable } from "./storageChecker.js";
+
 // Check if a user is already connected
 export function checkLogin() {
-    if (storageAvailable("sessionStorage")) {
-        if (sessionStorage.getItem("user")) {
-            setTimeout(() => {
-                const disconnect = confirm("Vous êtes déjà connecté. Souhaitez-vous vous déconnecter ?");
-                if (disconnect) { // If the user wants to disconnect
-                    sessionStorage.clear("user");
-                }
-            }, 200);
-        }
-    }
+	if (storageAvailable("sessionStorage") && sessionStorage.getItem("user")) {
+        setTimeout(() => {
+            const disconnect = confirm("Vous êtes déjà connecté. Souhaitez-vous vous déconnecter ?");
+            if (disconnect) {
+                sessionStorage.clear();
+            }
+        }, 200);
+	}
 }

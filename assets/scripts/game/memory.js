@@ -1,64 +1,62 @@
-import { setupCards } from "./setupCards.js";
+import { resetGame } from "./resetGame.js";
 
-export function memory (gridSize) {
+let storedCard;
+let cardCpt = 0;
+let victoryCpt = 0;
+let score = 0;
+let isTimeOutDone = true;
+
+export function memory(gridSize) {
     let cards = document.querySelectorAll(".content");
-    let storedCard;
-    let cardCpt = 0;
-    let victoryCpt = 0;
-    let score = 0;
-    let isTimeOutDone = true;
-    cards.forEach((card) => {
-        card.addEventListener("click", () => {
-            if (isTimeOutDone) {
-                card.classList.toggle("clicked"); // Display the other side of the card
-                card.style = "pointer-events: none"; // Disable the click-ability
-                if (cardCpt == 1) {
-                    isTimeOutDone = false;
-                    if (getSrc(card) != getSrc(storedCard)) { // Unless the previous card's link is equal to the new one's, flip them both back after 1sc
-                        setTimeout(() => {
-                            card.classList.toggle("clicked");
-                            card.style = "pointer-events: auto";
-                            storedCard.classList.toggle("clicked");
-                            storedCard.style = "pointer-events: auto";
-                            isTimeOutDone = true;
-                        }, 1000);
-                    } else {
-                        victoryCpt++;
-                        isTimeOutDone = true;
-                        if (victoryCpt == (gridSize/2)) {
-                            setTimeout(() => {
-                                alert(`Bravo ! Vous avez finis en ${score} coups !`);
-                            }, 200);
-                        }
-                    }
-                    cardCpt--;
-                    score++; // Increment scoring each 2 card flipped
-                    document.getElementById("currentScore").textContent = `${score}`; // Update the score display
-                } else { // Store the card for next check
-                    storedCard = card;
-                    cardCpt++;
-                }
-            }
-        });
-    });
+	// Add click event to all cards of the memory
+	for (const card of cards) {
+		card.addEventListener("click", () => {
+			handleCardClick(card, gridSize);
+		});
+	}
+	// Reset memory on Escape
+	globalThis.addEventListener("keydown", (event) => {
+		resetGame(event, gridSize);
+        cardCpt = 0;
+        victoryCpt = 0;
+        score = 0;
+	});
+}
+const getSrc = (card) => card.querySelector(".back > img").getAttribute("src");
 
-    let getSrc = (card) => card.querySelector('.back > img').getAttribute("src"); 
+// Handles the click event
+function handleCardClick(card, gridSize) {
+	if (isTimeOutDone) {
+		card.classList.toggle("clicked");
+		card.style = "pointer-events: none";
 
-    // Reset memory on Escape
-    globalThis.addEventListener("keydown", (event) => {
-    if (event.key == " " || event.key == "Escape") {
-       document.querySelectorAll(".content").forEach((card) => {
-            card.classList.remove("clicked");
-            card.style = "pointer-events: auto";
-       });
-       cardCpt = 0;
-       victoryCpt = 0;
-       score = 0;
-       document.getElementById("currentScore").textContent = `${score}`; // Update the score display
-       setTimeout(() => {
-        setupCards(gridSize); // Reset card position
-       }, 500);
-    }
-    event.preventDefault(); // Stops the default function of escape key
-    });
+		if (cardCpt == 1) {
+            isTimeOutDone = false;
+			if (getSrc(card) === getSrc(storedCard)) {
+				victoryCpt++;
+				isTimeOutDone = true;
+				if (victoryCpt == gridSize / 2) {
+					setTimeout(() => {
+						alert(`Bravo ! Vous avez finis en ${score} coups !`);
+					}, 200);
+				}
+			} else {
+				// Wait 1sc then toggle back the cards
+				setTimeout(() => {
+					card.classList.toggle("clicked");
+					card.style = "pointer-events: auto";
+					storedCard.classList.toggle("clicked");
+					storedCard.style = "pointer-events: auto";
+					isTimeOutDone = true;
+				}, 1000);
+			}
+            
+			cardCpt--;
+			score++;
+			document.getElementById("currentScore").textContent = `${score}`;
+		} else {
+			storedCard = card;
+			cardCpt++;
+		}
+	}
 }
